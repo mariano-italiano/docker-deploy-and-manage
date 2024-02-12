@@ -1,2 +1,3 @@
-# docker-deploy-and-manage
-Docker - Deploy &amp; Manage
+# Docker - Deploy & Manage 
+
+Github repository for *Docker - Deploy &amp; Manage* course.
