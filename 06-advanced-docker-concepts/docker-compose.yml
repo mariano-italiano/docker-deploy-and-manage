@@ -1,0 +1,35 @@
+version: '3'
+services:
+  web:
+    image: nginx:latest
+    hostname: nginx
+    restart: always
+    volumes:
+      - web-volume:/usr/share/nginx/html
+    container_name: web
+    ports:
+      - 8080:80
+  php:
+    image: php:8-fpm-alpine
+    hostname: php
+    container_name: php
+    expose:
+      - 9000
+  db:
+    image: mariadb
+    command: '--default-authentication-plugin=mysql_native_password'
+    volumes:
+      - db_data:/var/lib/mysql
+    restart: always
+    environment:
+      - MYSQL_ROOT_PASSWORD=somepassword
+      - MYSQL_DATABASE=test_db
+      - MYSQL_USER=user1
+      - MYSQL_PASSWORD=somepassword2
+    expose:
+      - 3306
+      - 33060
+    container_name: db
+volumes:
+  web-volume:
+  db_data:
