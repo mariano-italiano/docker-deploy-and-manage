@@ -1,0 +1,57 @@
+version: '3'
+services:
+  web:
+    # Container name and restart policy
+    hostname: web
+    container_name: web
+    restart: always
+
+    # Image to fetch from docker hub
+    image: marcinkujawski/docker-flask:2.0 
+
+    # Mapping of container port to host    
+    ports:
+      - "80:5000"
+
+    # Place service into specific network (isolated)
+    networks:
+      - appnet
+
+    # Link database container to app container (web) for reachability
+    links:
+      - "database:web"
+    
+  database:
+    # Container name and restart policy
+    hostname: pg_db
+    container_name: pg_db
+    restart: always 
+
+    # Image to fetch from docker hub
+    image: postgres
+
+    # Environment variables for startup script
+    environment:
+      - "POSTGRES_PASSWORD=securePass123!"
+      - "POSTGRES_USER=app_user"
+      - "POSTGRES_DB=app_db"
+      - "PGDATA=/var/lib/postgresql/data/pgdata"
+
+    # Mount named volume to postgress into home service dir
+    volumes:
+      - pg_data:/var/lib/postgresql/data
+
+    # Mapping of container port to host
+    ports:
+      - "5432:5432"
+    
+    # Place service into specific network (isolated)
+    networks:
+      - appnet
+
+volumes:
+  pg_data:
+
+networks:
+  appnet:
+    name: flask_network

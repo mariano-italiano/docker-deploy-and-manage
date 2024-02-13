@@ -1,0 +1,118 @@
+div.content {
+     clear: left;
+     padding: 2em;
+     font-family: Tahoma;
+}
+ div.content.inactive {
+     display: none;
+}
+ h1 {
+     display: inline-block;
+     background: #0066a1;
+     color: #ffffff;
+     border-radius: 20px;
+     padding: 10px;
+     font-family: Tahoma;
+}
+ table {
+     border-collapse: collapse 
+}
+ table td, table th {
+     padding: 10px;
+}
+ BODY {
+     background-color: White;
+}
+ TABLE {
+     font-size: 12;
+     font-family: Tahoma;
+     border-width: 1px;
+     border-style: solid;
+     border-color: black;
+     border-collapse: collapse;
+}
+ TH {
+     border-width: 1px;
+     padding: 2px;
+     border-style: solid;
+     border-color: black;
+     background-color: LightGray;
+}
+ TH#number {
+     width: 50px;
+}
+ TH#name {
+     width: 250px;
+}
+ TH#desc {
+     width: 350px;
+}
+ TH#component {
+     width: 100px;
+}
+ TH#status {
+     width: 80px;
+}
+ TD {
+     border-width: 1px;
+     padding: 2px;
+     border-style: solid;
+     border-color: black;
+     background-color: white;
+     width: fit-content;
+}
+ ol {
+     list-style-type:none;
+     padding:0;
+     margin:0;
+     background-color:#FFF;
+     font-size:18px;
+     height:2em;
+     line-height:2em;
+     text-align:center;
+}
+ ol a {
+     display:block;
+     text-decoration:none;
+     color:#000;
+     padding:0 5px;
+}
+ ol > li {
+     float:left;
+     width:150px;
+     margin-left:1px;
+     background-color:#FDD700;
+     height:2em;
+}
+ ol > li:first-child {
+     margin-left:0;
+}
+ ol > li:hover {
+     background-color:#EEE;
+}
+ ol > li:hover > a {
+     color:#09C;
+}
+ ol > li:hover > ul {
+     display:block;
+}
+ ol > li > ul {
+     display:none;
+     list-style-type:none;
+     padding:0;
+     margin:0;
+}
+ ol > li > ul > li {
+     position:relative;
+     background-color:#EEE;
+}
+ ol > li > ul > li > a {
+     border-top:1px solid #FFF;
+}
+ ol > li > ul > li:hover {
+     background-color:#DDD;
+}
+ ol > li > ul > li:hover > a {
+     color:#09C;
+}
+ 

@@ -1,0 +1,25 @@
+<!doctype html>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/styles.css') }}" />
+    <title>Flask Python App</title>
+  </head>
+  <body>
+    <h1>Flask Python App</h1>
+
+    <ol>
+	    <li><a href=/>Home</a></li>
+	    <li><a href=/>Application</a>
+	      <ul><li><a href=/db_init>Init</a></li></ul>
+	      <ul><li><a href=/db_get>Get courses</a></li></ul>
+	      <ul><li><a href=/db_add>Add course</a></li></ul>
+	      <ul><li><a href=/db_remove>Remove course</a></li></ul>
+	    </li>
+	    <li><a href=/test>Test Page</a>
+    </ol>
+
+    <div class="content">
+	    {% block content %} {% endblock %}
+    </div>
+  </body>
+</html>
