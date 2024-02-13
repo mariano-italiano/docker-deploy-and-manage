@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>All entries in database:</h2>
+    
+	<div class='message'>
+	<table>
+	  <tr>
+		<th>Course ID</th>
+		<th>Name</th>
+		<th>Trainer</th>
+		<th>Category</th>
+	  </tr>
+	{% for row in data %}
+	  <tr>
+	  {% for item in row %}
+		<td>{{ item }}</td>
+	  {% endfor %}
+	  </tr>
+	{% endfor %}
+	</div>
+    
+{% endblock %}
